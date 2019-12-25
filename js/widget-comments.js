@@ -1,22 +1,22 @@
 const comments_data = [
     {
-        id: 1,
-        username: "admin",
-        date: "Today, 2:30",
+        id: HELPERS.guid(),
+        username: "david",
+        date: moment("2018-01-25").valueOf(),
         comment: "Comentario "
     },
     {
-        id: 2,
+        id: HELPERS.guid(),
         avatar: "http://demos.themes.guide/bodeo/assets/images/users/m105.jpg",
-        username: "admin",
-        date: "Today, 3:30",
+        username: "paco",
+        date: moment("2018-03-25").valueOf(),
         comment: "Comentario "
     },
     {
-        id: 3,
-        username: "admin",
+        id: HELPERS.guid(),
+        username: "luis",
         avatar: "http://demos.themes.guide/bodeo/assets/images/users/m104.jpg",
-        date: "Today, 4:30",
+        date: moment("2018-05-25").valueOf(),
         comment: "Comentario "
     },
 ];
@@ -29,10 +29,10 @@ new Vue({
     methods: {
         addComment: function ({username, comment}) {
             comments_data.push({
-                id: comments_data.length + 1,
+                id: HELPERS.guid(),
                 username: username,
                 comment: comment,
-                date: "Today ..."
+                date: moment().valueOf()
             })
         }
     }

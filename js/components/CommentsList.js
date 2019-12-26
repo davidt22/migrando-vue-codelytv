@@ -1,3 +1,5 @@
+import CommentsItem from './CommentsItem.js'
+
 const templateCommentsList = `
 <div>
     <h3 class="mb-4">Comments</h3>
@@ -12,7 +14,15 @@ const templateCommentsList = `
 </div>
 `;
 
-Vue.component('comments-list', {
+export default Vue.component('comments-list', {
     props: ['comments'],
+    components: {
+        CommentsItem
+    },
+    computed: {
+        orderedComments: function () {
+            return _.orderBy(this.comments, 'date', 'desc')
+        }
+    },
     template: templateCommentsList
 });

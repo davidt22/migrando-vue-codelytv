@@ -25,7 +25,7 @@ const templateCommentsForm = `
 </form>
 `;
 
-Vue.component('comments-form', {
+export default Vue.component('comments-form', {
     props: ['addComment'],
     data: function () {
         return {

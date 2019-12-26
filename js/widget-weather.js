@@ -1,3 +1,5 @@
+import WeatherApiService from './services/WeatherApiService.js'
+
 const API_KEY = '627eb53a00b46c56672e5fef2aa41986';
 const service = new WeatherApiService(API_KEY);
 
@@ -15,7 +17,7 @@ new Vue({
       service.findWeather(DEFAULT_QUERY)
       .then(this.setWeatherData) //Promesa
   },
-  methods: { // A estos métodos se les bindea automáticamente el this de la instancia (por eso desde ellos podemos acceder tranquilamente a this.query, this.setWeatherData, etc…)
+  methods: { // A estos métodos se les bindea automáticamente el this de la instancia (por eso desde ellos podemos acceder a this.query, this.setWeatherData, etc…)
     findWeather: function() {
       service.findWeather(this.query)
         .then(this.setWeatherData)

@@ -16,7 +16,7 @@ new Vue({
     methods: {
         addComment: function ({username, comment}) {
             comments_data.push({
-                id: HELPERS.guid(),
+                id: guid(),
                 username: username,
                 comment: comment,
                 date: moment().valueOf()

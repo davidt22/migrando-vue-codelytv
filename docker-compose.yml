@@ -1,12 +1,11 @@
 version: '3'
 services:
   vue-webserver:
-    image: davidt22/apache-php7.1-symfony3
+    build: ./docker/webserver7/
     volumes:
-      - ./:/var/www/web:cached
+      - ./:/var/www:cached
       - ./docker/webserver7/config/php.ini:/usr/local/etc/php/php.ini
-      - ./docker/webserver7/config/project.conf:/etc/apache2/sites-enabled/
-    working_dir: /var/www/web
+    working_dir: /var/www/
     ports:
       - 80:80
     container_name: vue-webserver
